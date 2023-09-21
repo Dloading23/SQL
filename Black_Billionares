@@ -1,0 +1,37 @@
+CREATE TABLE black_billionares (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    nationality TEXT);
+    
+INSERT INTO black_billionares (fullname, age, nationality) VALUES ("Robert F. Smith", 60, "US");
+INSERT INTO black_billionares (fullname, age, nationality) VALUES ("Michael Jordan", 60, "US");
+INSERT INTO black_billionares (fullname, age, nationality) VALUES ("Floyd Mayweather", 46, "US");
+INSERT INTO black_billionares (fullname, age, nationality) VALUES ("Shawn Carter", 53 ,"US");
+INSERT INTO black_billionares (fullname, age, nationality) VALUES ("David Steward", 72, "US");
+
+CREATE table wealth (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    billionare_id INTEGER,
+    net_worth TEXT,
+    source_wealth TEXT);
+    
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (1, "6 billion", "Vista Equity Partners");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (2, "2 billion", "Jordan Brand/NBA");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (3, "1.2 billion", "Boxing/Bussiness");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (4, "2.5 billion", "Music/Roc Nation");
+INSERT INTO wealth (billionare_id, net_worth, source_wealth) VALUES (5, "3 billion", " World Wide Technology, Inc.");
+
+SELECT * FROM black_billionares;
+
+SELECT SUM(net_worth) AS "total_net_worth_among_black_billionares" 
+FROM wealth;
+
+SELECT AVG(net_worth) AS "Avg_net_worth"
+FROM wealth;
+
+SELECT black_billionares.fullname, wealth.net_worth
+    FROM black_billionares
+    JOIN wealth
+    ON black_billionares.id = wealth.billionare_id;
+    
