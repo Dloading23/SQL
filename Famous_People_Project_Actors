@@ -1,0 +1,29 @@
+CREATE TABLE Actors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    nationality TEXT);
+    
+INSERT INTO Actors (fullname, age, nationality) VALUES ("Tom Cruise", 60, "US");
+INSERT INTO Actors (fullname, age, nationality) VALUES ("Chris Hemsworth", 38, "Australia");
+INSERT INTO Actors (fullname, age, nationality) VALUES ("Will Smith", 53, "US");
+INSERT INTO Actors (fullname, age, nationality) VALUES ("Jennifer Lopez", 53, "US");
+INSERT INTO Actors (fullname, age, nationality) VALUES ("Anne Hathaway", 39, "US");
+
+CREATE table Movies  (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actors_id INTEGER,
+    movie TEXT,
+    year TEXT);
+    
+INSERT INTO Movies (actors_id, movie,year) VALUES (1, "mission impossible", "1996");
+INSERT INTO Movies (actors_id, movie,year) VALUES (2, "Thor", "2011");
+INSERT INTO Movies (actors_id, movie,year) VALUES (3, "Focus", "2015");
+INSERT INTO Movies (actors_id, movie,year) VALUES (4, "Maid in Manhattan", "2002");
+INSERT INTO Movies (actors_id, movie,year) VALUES (5, "bride wars", "2009");
+
+
+SELECT movies.movie, movies.year, actors.fullname
+    FROM movies 
+        JOIN actors 
+        ON movies.actors_id = actors.id
