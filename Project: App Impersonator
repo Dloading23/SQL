@@ -35,3 +35,6 @@ UPDATE Game_Scores SET hours_played = 35
 WHERE Game_Scores.id = 5;
 
 SELECT * FROM Game_Scores;
+
+DELETE FROM Game_Scores
+WHERE id = 2;
