@@ -1,0 +1,37 @@
+/* What does the app's SQL look like? */
+CREATE TABLE Game_Scores (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT,
+    gamer_id TEXT,
+    score INTEGER);
+    
+INSERT INTO Game_Scores (id, first_name, gamer_id, score) VALUES (1, "Jake","NeonNinja42", 1257);
+
+INSERT INTO Game_Scores (id, first_name, gamer_id, score) VALUES (2, "Paul", "ThunderStrike87", 2319);
+
+INSERT INTO Game_Scores (id, first_name, gamer_id, score) VALUES (3, "Kyle", "QuantumGamer99", 3134);
+
+INSERT INTO Game_Scores (id, first_name, gamer_id, score) VALUES (4, "Jessica",  "PixelPirate23", 1285);
+
+INSERT INTO Game_Scores (id, first_name, gamer_id, score) VALUES (5, "Riley", "CosmicWarrior76", 8654);
+
+ALTER TABLE Game_Scores ADD hours_played INTEGER;
+
+SELECT * FROM Game_Scores;
+
+UPDATE Game_Scores SET hours_played = 5
+WHERE Game_Scores.id = 1;
+
+UPDATE Game_Scores SET hours_played = 10
+WHERE Game_Scores.id = 2;
+
+UPDATE Game_Scores SET hours_played = 20
+WHERE Game_Scores.id = 3;
+
+UPDATE Game_Scores SET hours_played = 25
+WHERE Game_Scores.id = 4;
+
+UPDATE Game_Scores SET hours_played = 35
+WHERE Game_Scores.id = 5;
+
+SELECT * FROM Game_Scores;
